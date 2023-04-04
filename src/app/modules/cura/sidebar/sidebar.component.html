@@ -19,15 +19,15 @@
     <ul class="space-y-6 py-12 px-3 h-full bg-white font-medium">
       <li (click)="getSelectedMenu(menu)" *ngFor="let menu of menuItems">
         <a *ngIf="!menu.submenu; else subExist" [routerLink]="[menu.url]"
-          [ngClass]="menu.active ? 'bg-primary-50 px-4 text-white' : 'px-2 text-gray-600'"
-          class="flex items-center rounded-full w-full py-2 text-sm font-bold">
+          [ngClass]="menu.active ? 'bg-primary-50 px-4 text-white rounded-full' : 'px-2 text-gray-600'"
+          class="flex items-center w-full py-2 text-sm font-bold">
           <img src="assets/img/{{ menu.active ? menu.svg + '-2' : menu.svg }}.svg" class="w-5 h-5">
           <span class="ml-3">{{ menu.name }}</span>
         </a>
         <ng-template #subExist>
           <button type="button"
-          [ngClass]="menu.active ? 'bg-primary-50 px-4 text-white' : 'px-2 text-gray-600'"
-          class="flex items-center w-full py-2 text-sm font-bold transition duration-75 rounded-full"
+          [ngClass]="menu.active ? 'bg-primary-50 px-4 text-white rounded-full' : 'px-2 text-gray-600'"
+          class="flex items-center w-full py-2 text-sm font-bold transition duration-75"
           aria-controls="dropdown-example" data-collapse-toggle="dropdown-example">
           <img src="assets/img/{{ menu.active ? menu.svg + '-2' : menu.svg }}.svg" class="w-5 h-5">
           <span class="flex-1 ml-3 text-left whitespace-nowrap" sidebar-toggle-item>{{ menu.name }}</span>

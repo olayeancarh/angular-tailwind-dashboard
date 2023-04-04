@@ -3,13 +3,15 @@ import { CommonModule } from '@angular/common';
 import { CuraComponent } from './cura.component';
 import { SidebarComponent } from './sidebar/sidebar.component';
 import { RouterModule } from '@angular/router';
+import { MainComponent } from './main/main.component';
 
 
 
 @NgModule({
   declarations: [
     CuraComponent,
-    SidebarComponent
+    SidebarComponent,
+    MainComponent
   ],
   imports: [
     CommonModule,
