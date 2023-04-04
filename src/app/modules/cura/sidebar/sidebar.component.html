@@ -1,0 +1,52 @@
+<button data-drawer-target="sidebar-multi-level-sidebar" data-drawer-toggle="sidebar-multi-level-sidebar"
+  aria-controls="sidebar-multi-level-sidebar" type="button"
+  class="inline-flex items-center p-2 mt-2 ml-3 text-sm text-gray-500 rounded-lg md:hidden hover:bg-gray-100 focus:outline-none focus:ring-2 focus:ring-gray-200">
+  <span class="sr-only">Open sidebar</span>
+  <svg class="w-6 h-6" aria-hidden="true" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg">
+    <path clip-rule="evenodd" fill-rule="evenodd"
+      d="M2 4.75A.75.75 0 012.75 4h14.5a.75.75 0 010 1.5H2.75A.75.75 0 012 4.75zm0 10.5a.75.75 0 01.75-.75h7.5a.75.75 0 010 1.5h-7.5a.75.75 0 01-.75-.75zM2 10a.75.75 0 01.75-.75h14.5a.75.75 0 010 1.5H2.75A.75.75 0 012 10z">
+    </path>
+  </svg>
+</button>
+
+<aside id="sidebar-multi-level-sidebar"
+  class="fixed top-0 left-0 z-40 w-64 h-screen transition-transform -translate-x-full sm:translate-x-0"
+  aria-label="Sidebar">
+  <div class="h-full">
+    <a routerLink="/" class="flex items-center bg-white p-5 mb-1">
+      <span class="self-center text-2xl font-semibold whitespace-nowrap text-primary-50">Cura</span>
+    </a>
+    <ul class="space-y-6 py-12 px-3 h-full bg-white font-medium">
+      <li (click)="getSelectedMenu(menu)" *ngFor="let menu of menuItems">
+        <a *ngIf="!menu.submenu; else subExist" [routerLink]="[menu.url]"
+          [ngClass]="menu.active ? 'bg-primary-50 px-4 text-white' : 'px-2 text-gray-600'"
+          class="flex items-center rounded-full w-full py-2 text-sm font-bold">
+          <img src="assets/img/{{ menu.active ? menu.svg + '-2' : menu.svg }}.svg" class="w-5 h-5">
+          <span class="ml-3">{{ menu.name }}</span>
+        </a>
+        <ng-template #subExist>
+          <button type="button"
+          [ngClass]="menu.active ? 'bg-primary-50 px-4 text-white' : 'px-2 text-gray-600'"
+          class="flex items-center w-full py-2 text-sm font-bold transition duration-75 rounded-full"
+          aria-controls="dropdown-example" data-collapse-toggle="dropdown-example">
+          <img src="assets/img/{{ menu.active ? menu.svg + '-2' : menu.svg }}.svg" class="w-5 h-5">
+          <span class="flex-1 ml-3 text-left whitespace-nowrap" sidebar-toggle-item>{{ menu.name }}</span>
+          <img src="assets/img/{{ menu.active ? 'arr-2.svg' : 'arr.svg' }}" class="w-3 h-3">
+        </button>
+        <ul id="dropdown-example" class="hidden py-2 space-y-2">
+          <li *ngFor="let item of menu.submenu">
+            <a [routerLink]="[item.url]"
+              class="flex items-center w-full p-2 text-gray-600 transition duration-75 pl-11 group">{{ item.name }}</a>
+          </li>
+        </ul>
+        </ng-template>
+      </li>
+    </ul>
+    <div class="absolute flex inset-x-0 bottom-0 items-end w-full p-12">
+      <a routerLink="/" class="flex items-center p-2 text-gray-600 text-sm font-bold">
+        <img src="/assets/img/login.svg" class="w-5 h-5">
+        <span class="ml-3">Log-Out</span>
+      </a>
+    </div>
+  </div>
+</aside>
