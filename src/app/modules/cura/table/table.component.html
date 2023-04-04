@@ -1,0 +1,61 @@
+<div class="relative overflow-x-auto">
+  <table class="w-full text-sm text-center text-gray-500 border-separate border-spacing-y-2 bg-[#F5F5F5]">
+    <thead class="text-sm text-primary-100 bg-[#EAEDF6]">
+      <tr>
+        <th scope="col" class="px-6 py-5 rounded-l-xl">
+          Time
+        </th>
+        <th scope="col" class="px-6 py-5">
+          Date
+        </th>
+        <th scope="col" class="px-6 py-5">
+          Phone Number
+        </th>
+        <th scope="col" class="px-6 py-5">
+          Complaint Type
+        </th>
+        <th scope="col" class="px-6 py-5">
+          Rating
+        </th>
+        <th scope="col" class="px-6 py-5">
+          NPS
+        </th>
+        <th scope="col" class="px-6 py-5">
+          Status
+        </th>
+        <th scope="col" class="px-6 py-5 rounded-r-xl">
+
+        </th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let item of tableData" class="bg-white border-b">
+        <th scope="row" class="px-6 py-5 font-bold text-primary-100 whitespace-nowrap rounded-l-lg">
+          {{ item.time }}
+        </th>
+        <td class="px-6 py-5 font-bold text-primary-100 whitespace-nowrap">
+          {{ item.date }}
+        </td>
+        <td class="px-6 py-5 font-bold text-primary-100 whitespace-nowrap">
+          {{ item.phone }}
+        </td>
+        <td class="px-6 py-5 font-bold text-primary-100 whitespace-nowrap">
+          {{ item.complaint }}
+        </td>
+        <th scope="row" class="px-6 py-5 font-bold text-primary-100 whitespace-nowrap">
+          {{ item.rate }}
+        </th>
+        <td class="px-6 py-5 font-bold text-primary-100 whitespace-nowrap">
+          {{ item.nps }}
+        </td>
+        <td class="px-6 py-5 font-bold text-primary-100 whitespace-nowrap">
+          {{ item.status }}
+        </td>
+        <td class="px-6 py-5 font-bold text-primary-100 whitespace-nowrap rounded-r-lg">
+          <button (click)="viewComplaint(item)" type="button" [ngClass]="item.active ? 'text-white bg-primary-50' : 'text-primary-100 bg-white'"
+            class="font-bold rounded-full text-sm px-5 py-2 mr-2 mb-2 focus:outline-none border border-primary-50">View</button>
+        </td>
+      </tr>
+    </tbody>
+  </table>
+</div>

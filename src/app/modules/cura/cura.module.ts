@@ -4,6 +4,7 @@ import { CuraComponent } from './cura.component';
 import { SidebarComponent } from './sidebar/sidebar.component';
 import { RouterModule } from '@angular/router';
 import { MainComponent } from './main/main.component';
+import { TableComponent } from './table/table.component';
 
 
 
@@ -11,7 +12,8 @@ import { MainComponent } from './main/main.component';
   declarations: [
     CuraComponent,
     SidebarComponent,
-    MainComponent
+    MainComponent,
+    TableComponent
   ],
   imports: [
     CommonModule,
