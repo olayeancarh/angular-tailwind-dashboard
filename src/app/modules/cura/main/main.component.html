@@ -21,8 +21,110 @@
         </div>
       </div>
     </div>
-    <div class="flex items-center justify-center h-48 mb-4 rounded bg-white">
-      <p class="text-2xl text-gray-400">+</p>
+    <div class="flex flex-col m-5">
+      <h1 class="font-extrabold text-primary-50 text-xl my-3">Complaints</h1>
+      <div class="flex my-3">
+        <div class="w-4/5">
+          <form>
+            <label for="default-search" class="mb-2 text-sm font-medium text-gray-900 sr-only">Search</label>
+            <div class="relative">
+              <input type="search" id="default-search"
+                class="block w-full py-3 px-5 pr-10 text-sm text-gray-900 border border-gray-100 rounded-full bg-white focus:ring-blue-500 focus:border-blue-500"
+                placeholder="Enter phone number">
+              <div class="absolute inset-y-0 right-0 flex items-center pr-7 pointer-events-none">
+                <svg aria-hidden="true" class="w-5 h-5 text-gray-500" fill="none" stroke="currentColor"
+                  viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                    d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"></path>
+                </svg>
+              </div>
+            </div>
+          </form>
+        </div>
+        <div class="flex w-1/5 ml-1 justify-center items-center">
+          <button type="button"
+            class="text-white bg-primary-50 py-2 px-5 hover:bg-primary-50/90 focus:ring-4 focus:ring-prbg-primary-50/50 focus:outline-none font-medium rounded-full text-sm text-center inline-flex items-center">
+            <svg class="w-4 h-4" viewBox="0 0 20 18" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <path
+                d="M10.414 2H19C19.2652 2 19.5196 2.10536 19.7071 2.29289C19.8946 2.48043 20 2.73478 20 3V17C20 17.2652 19.8946 17.5196 19.7071 17.7071C19.5196 17.8946 19.2652 18 19 18H1C0.734784 18 0.48043 17.8946 0.292893 17.7071C0.105357 17.5196 0 17.2652 0 17V1C0 0.734784 0.105357 0.48043 0.292893 0.292893C0.48043 0.105357 0.734784 0 1 0H8.414L10.414 2ZM11 10V6H9V10H6L10 14L14 10H11Z"
+                fill="white" />
+            </svg>
+            <span class="hidden lg:block ml-2">Export Complaints CSV</span>
+          </button>
+        </div>
+      </div>
+      <div class="flex my-3">
+        <div class="w-full grid grid-cols-1 md:grid-cols-2 lg:grid-cols-6 gap-y-2 justify-center items-center">
+          <button type="button"
+            class="text-primary-100 bg-white py-2 px-3 font-medium shadow-md rounded-full text-sm text-center inline-flex items-center mr-1">
+            <svg class="w-4 h-4" viewBox="0 0 15 14" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <path
+                d="M14.3737 7H0.257452V13.3C0.257452 13.4857 0.331814 13.6637 0.464179 13.795C0.596544 13.9263 0.776071 14 0.963264 14H13.6679C13.8551 14 14.0346 13.9263 14.167 13.795C14.2993 13.6637 14.3737 13.4857 14.3737 13.3V7ZM3.78651 1.4H0.963264C0.776071 1.4 0.596544 1.47375 0.464179 1.60503C0.331814 1.7363 0.257452 1.91435 0.257452 2.1V5.6H14.3737V2.1C14.3737 1.91435 14.2993 1.7363 14.167 1.60503C14.0346 1.47375 13.8551 1.4 13.6679 1.4H10.8446V0H9.43301V1.4H5.19813V0H3.78651V1.4Z"
+                fill="#8A6CC8" />
+            </svg>
+            <span class="ml-2">Start Date: Sept. 1</span>
+          </button>
+          <button type="button"
+            class="text-primary-100 bg-white py-2 px-3 font-medium shadow-md rounded-full text-sm text-center inline-flex items-center mx-1">
+            <svg class="w-4 h-4" viewBox="0 0 15 14" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <path
+                d="M14.3737 7H0.257452V13.3C0.257452 13.4857 0.331814 13.6637 0.464179 13.795C0.596544 13.9263 0.776071 14 0.963264 14H13.6679C13.8551 14 14.0346 13.9263 14.167 13.795C14.2993 13.6637 14.3737 13.4857 14.3737 13.3V7ZM3.78651 1.4H0.963264C0.776071 1.4 0.596544 1.47375 0.464179 1.60503C0.331814 1.7363 0.257452 1.91435 0.257452 2.1V5.6H14.3737V2.1C14.3737 1.91435 14.2993 1.7363 14.167 1.60503C14.0346 1.47375 13.8551 1.4 13.6679 1.4H10.8446V0H9.43301V1.4H5.19813V0H3.78651V1.4Z"
+                fill="#8A6CC8" />
+            </svg>
+            <span class="ml-2">Start Date: Sept. 30</span>
+          </button>
+          <button type="button" id="statusButtonDropdown" data-dropdown-toggle="statusDropdown"
+            class="text-primary-100 bg-white py-2 px-3 font-medium shadow-md rounded-full text-sm text-center inline-flex items-center mx-1 border border-primary-50">
+            <span class="">Status: In-Progress</span>
+          </button>
+          <div id="statusDropdown" class="z-10 hidden bg-white divide-y divide-gray-100 rounded-lg shadow w-44">
+            <ul class="p-2 text-sm text-gray-700" aria-labelledby="statusButtonDropdown">
+              <li>
+                <a routerLink="/" class="block px-4 py-2 hover:bg-gray-100">Open</a>
+              </li>
+              <li>
+                <a routerLink="/" class="block px-4 py-2 hover:bg-gray-100 border-t border-b">In-Progress</a>
+              </li>
+              <li>
+                <a routerLink="/" class="block px-4 py-2 hover:bg-gray-100">Resolved</a>
+              </li>
+            </ul>
+          </div>
+          <button type="button"
+            class="text-white bg-primary-50 py-2 px-14 font-medium shadow-md rounded-full text-sm text-center inline-flex items-center mx-1">
+            <svg class="w-4 h-4" viewBox="0 0 14 15" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <path d="M5.2974 8.68421L0.381927 1.57895V0H13.4899V1.57895L8.57439 8.68421V13.4211L5.2974 15V8.68421Z"
+                fill="#FFF2F2" />
+            </svg>
+
+            <span class="ml-2 text-center">Filter</span>
+          </button>
+          <button type="button"
+            class="inline-flex items-center text-primary-100 bg-white py-2 px-9 font-medium shadow-md rounded-full text-sm text-center mx-1">
+            <svg class="w-4 h-4" viewBox="0 0 21 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <path
+                d="M10.274 20C4.70512 20 0.190948 15.523 0.190948 10C0.190948 4.477 4.70512 0 10.274 0C15.8428 0 20.357 4.477 20.357 10C20.357 15.523 15.8428 20 10.274 20ZM10.274 8.586L7.42249 5.757L5.99575 7.172L8.84824 10L5.99575 12.828L7.42249 14.243L10.274 11.414L13.1255 14.243L14.5522 12.828L11.6997 10L14.5522 7.172L13.1255 5.757L10.274 8.586Z"
+                fill="#8A6CC8" />
+            </svg>
+            <span class="ml-2 text-center">Clear Filter</span>
+          </button>
+          <div class="flex items-center px-4">
+            <button class="flex relative w-5 h-5 rounded-full p-5 bg-white text-center items-center justify-center">
+              <svg class="w-3 h-3 absolute" viewBox="0 0 8 13" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path d="M2.828 6.636L7.778 11.586L6.364 13L-2.78179e-07 6.636L6.364 0.271999L7.778 1.686L2.828 6.636Z"
+                  fill="black" />
+              </svg>
+            </button>
+            <span class="mx-auto">1 of 10</span>
+            <button class="flex relative w-5 h-5 rounded-full p-5 bg-white text-center items-center justify-center">
+              <svg class="w-3 h-3 absolute" viewBox="0 0 8 13" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path d="M5.172 6.364L0.222 1.414L1.636 -2.78179e-07L8 6.364L1.636 12.728L0.222 11.314L5.172 6.364Z"
+                  fill="black" />
+              </svg>
+            </button>
+          </div>
+        </div>
+      </div>
     </div>
   </div>
 </div>
