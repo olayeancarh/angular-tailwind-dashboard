@@ -1,0 +1,1 @@
+"use strict";(self.webpackChunkseamhealth_ui_1=self.webpackChunkseamhealth_ui_1||[]).push([[642],{642:(s,l,a)=>{a.r(l),a.d(l,{CuraModule:()=>t});var o=a(895),r=a(322),n=a(256);let t=(()=>{class u{}return u.\u0275fac=function(e){return new(e||u)},u.\u0275mod=n.oAB({type:u}),u.\u0275inj=n.cJS({imports:[o.ez,r.Bz]}),u})()}}]);
